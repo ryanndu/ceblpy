@@ -1,37 +1,37 @@
 import pandas as pd
 from . import helpers as h
 
-def get_cebl_schedule(seasons=[]):
+def load_cebl_schedule(seasons=[]):
     h.validate_seasons(seasons)
     schedule = pd.read_csv("https://github.com/ryanndu/cebl-data/releases/download/schedule/cebl_schedule.csv")
     schedule = schedule[schedule['season'].isin(seasons)]
     return schedule
 
-def get_cebl_team_boxscore(seasons=[]):
+def load_cebl_team_boxscore(seasons=[]):
     h.validate_seasons(seasons)
     team_boxscore = pd.read_csv("https://github.com/ryanndu/cebl-data/releases/download/team-boxscore/cebl_teams.csv")
     team_boxscore = team_boxscore[team_boxscore['season'].isin(seasons)]
     return team_boxscore
 
-def get_cebl_player_boxscore(seasons=[]):
+def load_cebl_player_boxscore(seasons=[]):
     h.validate_seasons(seasons)
     player_boxscore = pd.read_csv("https://github.com/ryanndu/cebl-data/releases/download/player-boxscore/cebl_players.csv")
     player_boxscore = player_boxscore[player_boxscore['season'].isin(seasons)]
     return player_boxscore
 
-def get_cebl_officials(seasons=[]):
+def load_cebl_officials(seasons=[]):
     h.validate_seasons(seasons)
     officials = pd.read_csv("https://github.com/ryanndu/cebl-data/releases/download/officials/cebl_officials.csv")
     officials = officials[officials['season'].isin(seasons)]
     return officials
 
-def get_cebl_coaches(seasons=[]):
+def load_cebl_coaches(seasons=[]):
     h.validate_seasons(seasons)
     coaches = pd.read_csv("https://github.com/ryanndu/cebl-data/releases/download/coaches/cebl_coaches.csv")
     coaches = coaches[coaches['season'].isin(seasons)]
     return coaches
 
-def get_cebl_pbp(seasons=[]):
+def load_cebl_pbp(seasons=[]):
     h.validate_seasons(seasons)
     pbp = pd.DataFrame()
     for season in seasons:
