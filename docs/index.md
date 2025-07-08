@@ -5,7 +5,7 @@
 :maxdepth: 1
 :hidden:
 
-example.ipynb
+how_to_use.ipynb
 changelog.md
 contributing.md
 conduct.md
