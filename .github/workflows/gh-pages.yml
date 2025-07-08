@@ -1,4 +1,4 @@
-name: Deploy sphinx docs to GitHub Pages
+name: Deploy Sphinx Docs to GitHub Pages
 
 on:
   push:
@@ -8,10 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to latest version
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -20,13 +19,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python install -r docs/requirements.txt
-          pip install sphinx myst-parser myst-nb furo 
+          pip install -r requirements.txt
+          pip install sphinx
 
       - name: Build docs
-        run: sphinx-build docs _build/html
+        run: sphinx-build -b html docs/ _build/html  # Added -b html for explicitness
 
-      - name: Deploy to Github Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
