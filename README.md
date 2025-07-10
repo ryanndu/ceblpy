@@ -34,7 +34,7 @@ Found a bug? Have an idea to make ceblpy better? We'd love to hear from you!
 
 ## License
 
-`ceblpy` was created by Ryan Du. It is licensed under the terms of the MIT license.
+`ceblpy` was created by Ryan Du and David Awosoga. It is licensed under the terms of the MIT license.
 
 ## Credits
 
