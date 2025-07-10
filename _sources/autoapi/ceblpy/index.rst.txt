@@ -1,0 +1,29 @@
+ceblpy
+======
+
+.. py:module:: ceblpy
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/ceblpy/ceblpy/index
+   /autoapi/ceblpy/helpers/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ceblpy.__version__
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+

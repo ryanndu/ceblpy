@@ -1,0 +1,33 @@
+ceblpy.helpers
+==============
+
+.. py:module:: ceblpy.helpers
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ceblpy.helpers.validate_seasons
+
+
+Module Contents
+---------------
+
+.. py:function:: validate_seasons(seasons)
+
+   Checks whether all the provided seasons are valid years and raises an error if not.
+
+   :param seasons: A list of years representing seasons to validate.
+   :type seasons: list of int
+
+   :rtype: None
+
+   .. rubric:: Examples
+
+   >>> validate_seasons([2019, 2020, 2021])
+   >>> validate_seasons([2018, "2020"])  # Raises TypeError
+   >>> validate_seasons([2022, 2023, 2030])  # Raises ValueError
+
+
