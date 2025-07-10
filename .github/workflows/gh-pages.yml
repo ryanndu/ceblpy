@@ -18,7 +18,7 @@ jobs:
           python-version: '3.10'
 
       - name: Build docs
-        run: sphinx-build -b html docs/ _build/html  # Added -b html for explicitness
+        run: python -m sphinx -b html docs/ _build/html 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
