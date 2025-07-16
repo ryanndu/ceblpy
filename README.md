@@ -8,6 +8,7 @@
 
 The package has functions to retrieve team and player box scores, game schedules, coach and officials information, and full play-by-play data.
 
+---
 
 ## Installation
 
@@ -17,24 +18,39 @@ You can install the **[ceblpy](https://github.com/ryanndu/ceblpy)** package with
 $ pip install ceblpy
 ```
 
-<hr style="height:1px; border:none; background-color:#ccc;">
+---
 
 ## Usage
 
-Please refer to the [package vignette](https://ryanndu.github.io/ceblpy/how_to_use.html) for more information on how to use this library. 
+To retrieve the CEBL schedule for a given season (e.g., 2024), use the `load_cebl_schedule()` function:
 
+```python
+from ceblpy.ceblpy import load_cebl_schedule
+
+# Load the 2024 CEBL season schedule
+schedule = load_cebl_schedule(2024)
+
+# Preview the data
+print(schedule.head())
+```
+
+---
 
 ## Contributing
 
 Found a bug? Have an idea to make ceblpy better? We'd love to hear from you!
-- **Report Issues** on our **[GitHub Issues](https://github.com/ryanndu/ceblpy/issues)** page
+- **Open an issue** on our **[GitHub Issues](https://github.com/ryanndu/ceblpy/issues)** page
 - **Email Me** directly at **[ryandu343@gmail.com](mailto:ryandu343@gmail.com)**
-- All suggestions and contributions are welcome!
 
+All suggestions and contributions are welcome!
+
+---
 
 ## License
 
 `ceblpy` was created by Ryan Du and David Awosoga. It is licensed under the terms of the MIT license.
+
+---
 
 ## Credits
 
