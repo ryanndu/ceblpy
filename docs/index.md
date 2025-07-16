@@ -5,9 +5,7 @@
 :maxdepth: 1
 :hidden:
 
-how_to_use.ipynb
-changelog.md
-contributing.md
-conduct.md
+Usage <../example.ipynb>
+Changelog <changelog.md>
 autoapi/index
 ```
