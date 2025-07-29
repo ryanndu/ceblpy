@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ceblpy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Extract and analyze data from the Canadian Elite Basketball league (CEBL)."
 authors = ["Ryan Du"]
 license = "MIT"
@@ -23,3 +23,6 @@ furo = "^2024.8.6"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+"Documentation" = "https://ceblpy.readthedocs.io/en/latest/index.html"
