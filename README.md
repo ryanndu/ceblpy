@@ -4,6 +4,8 @@
 
 ## Overview
 
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/ceblpy?period=total&units=NONE&left_color=BLACK&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/ceblpy)
+
 **[ceblpy](https://github.com/ryanndu/ceblpy)** is a Python package designed for working with the Canadian Elite Basketball League (CEBL) data.
 
 The package has functions to retrieve team and player box scores, game schedules, coach and officials information, and full play-by-play data.
