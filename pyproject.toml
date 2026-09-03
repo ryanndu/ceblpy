@@ -8,9 +8,11 @@ authors = [
 ]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "pandas>=2.3.0",
+    "pyarrow>=25.0.1",
+    "requests>=2.34.2",
 ]
 
 [build-system]
