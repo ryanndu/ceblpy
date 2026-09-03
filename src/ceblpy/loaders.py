@@ -1,5 +1,5 @@
 import io
-from datetime import datetime
+from datetime import UTC, datetime
 
 import pandas as pd
 import requests
@@ -28,8 +28,10 @@ def _load(dataset: str, seasons: int | list[int] | None) -> pd.DataFrame:
         response = requests.get(url, timeout=60)
         response.raise_for_status()
     except requests.RequestException as error:
-        raise ConnectionError(f"Could not download {dataset} data from {url}") from error
-    
+        raise ConnectionError(
+            f"Could not download {dataset} data from {url}"
+        ) from error
+
     frame = pd.read_parquet(io.BytesIO(response.content))
     return frame[frame["season"].isin(seasons)].reset_index(drop=True)
 
@@ -49,7 +51,7 @@ def _validate_seasons(seasons: int | list[int] | None) -> list[int]:
         list[int]: _description_
     """
     first_season = 2019
-    latest = datetime.now().year
+    latest = datetime.now(UTC).year
     if seasons is None:
         return list(range(first_season, latest + 1))
     if isinstance(seasons, int):
@@ -63,9 +65,7 @@ def _validate_seasons(seasons: int | list[int] | None) -> list[int]:
         if not isinstance(season, int):
             raise TypeError(f"Expected an integer season, got {type(season).__name__}")
         if not first_season <= season <= latest:
-            raise ValueError(
-                f"Season {season} out of range ({first_season}-{latest})"
-            )
+            raise ValueError(f"Season {season} out of range ({first_season}-{latest})")
     return seasons
 
 
