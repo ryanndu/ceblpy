@@ -94,7 +94,7 @@ def load_cebl_team_boxscore(seasons: int | list[int] | None = None) -> pd.DataFr
 
     Returns:
         One row per team per game, home team first. Includes the head coach
-        and assistants.
+            and assistants.
 
     Examples:
         >>> load_cebl_team_boxscore(2024)
@@ -129,7 +129,7 @@ def load_cebl_pbp(seasons: int | list[int] | None = None) -> pd.DataFrame:
 
     Returns:
         One row per event, oldest first, with shot coordinates on shooting
-        events.
+            events.
 
     Examples:
         >>> load_cebl_pbp(2024)
@@ -147,7 +147,7 @@ def load_cebl_officials(seasons: int | list[int] | None = None) -> pd.DataFrame:
 
     Returns:
         One row per official per game. Games with no officials recorded
-        produce no rows.
+            produce no rows.
 
     Examples:
         >>> load_cebl_officials(2024)

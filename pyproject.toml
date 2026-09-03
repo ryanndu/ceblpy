@@ -30,3 +30,7 @@ dev = [
     "pytest>=8.4.1",
     "ruff>=0.16.5",
 ]
+docs = [
+    "mkdocstrings-python>=2.0.8",
+    "zensical>=0.0.58",
+]

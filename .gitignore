@@ -25,5 +25,5 @@ coverage.xml
 # macOS
 .DS_Store
 
-# Scratch
-old_code/
+# Site
+site/
