@@ -2,7 +2,7 @@
 
 All notable changes to `ceblpy` are documented here.
 
-## v1.0.0 (unreleased)
+## v1.0.0
 
 ### Changes
 
