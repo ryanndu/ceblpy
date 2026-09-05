@@ -37,18 +37,20 @@ def _load(dataset: str, seasons: int | list[int] | None) -> pd.DataFrame:
 
 
 def _validate_seasons(seasons: int | list[int] | None) -> list[int]:
-    """_summary_
+    """Checks that seasons is a usable season collection.
 
     Args:
-        seasons (int | list[int] | None): _description_
+        seasons (int | list[int] | None): A season, a list of seasons, or None for all of them.
 
     Raises:
-        TypeError: _description_
-        TypeError: _description_
-        ValueError: _description_
+        TypeError: If seasons isn't an int, a list of ints, or None.
+        TypeError: If a season in seasons isn't an int.
+        ValueError: If the season is out of range.
 
     Returns:
-        list[int]: _description_
+        list[int]: The requested seasons as a list. If None was given, every season
+            from the league's first through the current year.
+
     """
     first_season = 2019
     latest = datetime.now(UTC).year
