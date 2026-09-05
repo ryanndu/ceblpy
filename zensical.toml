@@ -6,8 +6,9 @@ repo_url = "https://github.com/ryanndu/ceblpy"
 repo_name = "ryanndu/ceblpy"
 nav = [
   { "Home" = "index.md" },
-  { "Getting started" = "getting-started.md" },
+  { "Analyzing a game" = "analyzing-a-game.md" },
   { "API reference" = "reference.md" },
+  { "Data Dictionary" = "data-dictionary.md" },
 ]
 
 [project.theme]
@@ -39,6 +40,8 @@ media = "(prefers-color-scheme: dark)"
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
+
+[project.plugins.markdown-exec]
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "google"
