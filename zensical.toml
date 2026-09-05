@@ -8,7 +8,8 @@ nav = [
   { "Home" = "index.md" },
   { "Analyzing a game" = "analyzing-a-game.md" },
   { "API reference" = "reference.md" },
-  { "Data Dictionary" = "data-dictionary.md" },
+  { "Data dictionary" = "data-dictionary.md" },
+  { "Changelog" = "changelog.md" },
 ]
 
 [project.theme]
@@ -60,3 +61,5 @@ pymdownx.highlight.line_spans = "__span"
 pymdownx.highlight.pygments_lang_class = true
 pymdownx.inlinehilite = {}
 pymdownx.superfences = {}
+pymdownx.snippets.base_path = ["."]
+pymdownx.snippets.check_paths = true
