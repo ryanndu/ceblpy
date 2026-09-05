@@ -1,6 +1,6 @@
 [project]
 name = "ceblpy"
-version = "1.0.0rc1"
+version = "1.0.0"
 description = "Load Canadian Elite Basketball League schedules, box scores, and play-by-play as pandas DataFrames."
 authors = [
     { name = "Ryan Du" },
