@@ -24,10 +24,10 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.11", "3.12", "3.13", "3.14"]
-        pandas-version: [""]
+        floors: [false]
         include:
-          - python-version: "3.12"
-            pandas-version: "2.3.0"
+          - python-version: "3.11"
+            floors: true
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -35,6 +35,8 @@ jobs:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
       - run: uv sync --locked
-      - if: matrix.pandas-version != ''
-        run: uv pip install "pandas==${{ matrix.pandas-version }}"
+      - if: matrix.floors
+        run: |
+          uv pip install pandas==2.3.0 pyarrow==16.0.0 requests==2.32.2
+          uv run --no-sync python -c "import pandas, pyarrow, requests; print(pandas.__version__, pyarrow.__version__, requests.__version__)"
       - run: uv run --no-sync pytest

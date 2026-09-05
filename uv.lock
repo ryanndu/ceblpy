@@ -41,8 +41,8 @@ docs = [
 [package.metadata]
 requires-dist = [
     { name = "pandas", specifier = ">=2.3.0" },
-    { name = "pyarrow", specifier = ">=25.0.1" },
-    { name = "requests", specifier = ">=2.34.2" },
+    { name = "pyarrow", specifier = ">=16.0.0" },
+    { name = "requests", specifier = ">=2.32.2" },
 ]
 
 [package.metadata.requires-dev]
