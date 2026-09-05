@@ -1,4 +1,4 @@
-# ceblpy
+# ceblpy <img src="https://github.com/ryanndu/ceblpy/raw/main/assets/images/cebl-logo.png" align="right" width="100" height="100"/>
 
 The goal of this package is to help people access clean and tidy data from
 the Canadian Elite Basketball League. It provides a set of loaders that return
@@ -19,13 +19,15 @@ import ceblpy
 schedule = ceblpy.load_cebl_schedule(2025)
 
 print(
-    schedule[[
-        "start_time_utc",
-        "home_team_name",
-        "home_team_score",
-        "away_team_name",
-        "away_team_score",
-    ]]
+    schedule[
+        [
+            "start_time_utc",
+            "home_team_name",
+            "home_team_score",
+            "away_team_name",
+            "away_team_score",
+        ]
+    ]
     .head()
     .to_markdown(index=False)
 )

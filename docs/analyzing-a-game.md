@@ -14,14 +14,16 @@ schedule = ceblpy.load_cebl_schedule(2025)
 final = schedule[schedule["fiba_game_id"] == "2702972"]
 
 print(
-    final[[
-        "start_time_utc",
-        "venue_name",
-        "home_team_name",
-        "home_team_score",
-        "away_team_name",
-        "away_team_score",
-    ]].to_markdown(index=False)
+    final[
+        [
+            "start_time_utc",
+            "venue_name",
+            "home_team_name",
+            "home_team_score",
+            "away_team_name",
+            "away_team_score",
+        ]
+    ].to_markdown(index=False)
 )
 ```
 
@@ -36,15 +38,17 @@ boxscore = ceblpy.load_cebl_team_boxscore(2025)
 final = boxscore[boxscore["fiba_game_id"] == "2702972"]
 
 print(
-    final[[
-        "team_name",
-        "points",
-        "field_goals_made",
-        "field_goals_attempted",
-        "total_rebounds",
-        "bench_points",
-        "points_in_paint",
-    ]].to_markdown(index=False)
+    final[
+        [
+            "team_name",
+            "points",
+            "field_goals_made",
+            "field_goals_attempted",
+            "total_rebounds",
+            "bench_points",
+            "points_in_paint",
+        ]
+    ].to_markdown(index=False)
 )
 ```
 
@@ -62,20 +66,20 @@ in the denominator.
 import ceblpy
 
 players = ceblpy.load_cebl_player_boxscore(2025)
-final = players[
-    (players["fiba_game_id"] == "2702972") & (players["minutes"] > 0)
-]
+final = players[(players["fiba_game_id"] == "2702972") & (players["minutes"] > 0)]
 
 print(
     final.sort_values("points", ascending=False)
-    .head(6)[[
-        "first_name",
-        "family_name",
-        "minutes",
-        "points",
-        "total_rebounds",
-        "assists",
-    ]]
+    .head(6)[
+        [
+            "first_name",
+            "family_name",
+            "minutes",
+            "points",
+            "total_rebounds",
+            "assists",
+        ]
+    ]
     .to_markdown(index=False)
 )
 ```
@@ -90,18 +94,19 @@ import ceblpy
 
 pbp = ceblpy.load_cebl_pbp(2025)
 shots = pbp[
-    (pbp["fiba_game_id"] == "2702972") & 
-    (pbp["action_type"].isin(["2pt", "3pt"]))
+    pbp["fiba_game_id"] == "2702972") & (pbp["action_type"].isin(["2pt", "3pt"]))
 ]
 
 print(
-    shots[[
-        "player_name",
-        "action_type",
-        "success",
-        "x",
-        "y",
-    ]]
+    shots[
+        [
+            "player_name",
+            "action_type",
+            "success",
+            "x",
+            "y",
+        ]
+    ]
     .head(6)
     .to_markdown(index=False)
 )
@@ -128,9 +133,9 @@ import ceblpy
 pbp = ceblpy.load_cebl_pbp(2025)
 
 shots = pbp[
-    (pbp["fiba_game_id"] == "2702972") &
-    (pbp["action_type"].isin(["2pt", "3pt"])) &
-    (pbp["is_home"] == True)
+    (pbp["fiba_game_id"] == "2702972")
+    & (pbp["action_type"].isin(["2pt", "3pt"]))
+    & (pbp["is_home"] == True)
 ].copy()
 
 # x and y run 0-100 across the full court; scale to FIBA metres (28m x 15m)
