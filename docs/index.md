@@ -1,4 +1,4 @@
-# ceblpy <img src="https://github.com/ryanndu/ceblpy/raw/main/assets/images/cebl-logo.png" align="right" width="100" height="100"/>
+# ceblpy <img src="https://github.com/ryanndu/ceblpy/raw/main/assets/images/cebl-logo.jpg" align="right" width="100" height="100"/>
 
 The goal of this package is to help people access clean and tidy data from
 the Canadian Elite Basketball League. It provides a set of loaders that return

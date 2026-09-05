@@ -1,4 +1,4 @@
-# ceblpy <img src="https://github.com/ryanndu/ceblpy/raw/main/assets/images/cebl-logo.png" align="right" width="100" height="100"/>
+# ceblpy <img src="https://github.com/ryanndu/ceblpy/raw/main/assets/images/cebl-logo.jpg" align="right" width="100" height="100"/>
 
 ---
 
