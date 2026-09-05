@@ -6,28 +6,28 @@
 
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/ceblpy?period=total&units=NONE&left_color=BLACK&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/ceblpy)
 
-**[ceblpy](https://github.com/ryanndu/ceblpy)** is a Python package designed for working with the Canadian Elite Basketball League (CEBL) data.
+**[ceblpy](https://github.com/ryanndu/ceblpy)** loads Canadian Elite Basketball League (CEBL) data as pandas DataFrames.
 
-The package has functions to retrieve team and player box scores, game schedules, coach and officials information, and full play-by-play data.
+Five datasets are available: game schedules, team box scores, player box scores, play-by-play, and game officials. Coaches are included as columns on the team box score.
+
+Full documentation, including a worked example and a data dictionary for every column, is at **[ryanndu.github.io/ceblpy](https://ryanndu.github.io/ceblpy/)**.
 
 ---
 
 ## Installation
 
-You can install the **[ceblpy](https://github.com/ryanndu/ceblpy)** package with:
-
 ```bash
-$ pip install ceblpy
+pip install ceblpy
 ```
 
 ---
 
 ## Usage
 
-To retrieve the CEBL schedule for a given season (e.g., 2024), use the `load_cebl_schedule()` function:
+Every loader takes a season, a list of seasons, or nothing at all for every season available.
 
 ```python
-from ceblpy.ceblpy import load_cebl_schedule
+from ceblpy import load_cebl_schedule
 
 # Load the 2024 CEBL season schedule
 schedule = load_cebl_schedule(2024)
@@ -36,24 +36,14 @@ schedule = load_cebl_schedule(2024)
 print(schedule.head())
 ```
 
----
+The five loaders are:
 
-## Contributing
+| Function | Returns |
+| --- | --- |
+| `load_cebl_schedule()` | One row per game |
+| `load_cebl_team_boxscore()` | One row per team per game |
+| `load_cebl_player_boxscore()` | One row per player per game |
+| `load_cebl_pbp()` | One row per play-by-play event |
+| `load_cebl_officials()` | One row per official per game |
 
-Found a bug? Have an idea to make ceblpy better? We'd love to hear from you!
-- **Open an issue** on our **[GitHub Issues](https://github.com/ryanndu/ceblpy/issues)** page
-- **Email Me** directly at **[ryandu343@gmail.com](mailto:ryandu343@gmail.com)**
-
-All suggestions and contributions are welcome!
-
----
-
-## License
-
-`ceblpy` was created by Ryan Du and David Awosoga. It is licensed under the terms of the MIT license.
-
----
-
-## Credits
-
-`ceblpy` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+Data is sourced from **[cebl-data](https://github.com/ryanndu/cebl-data)**, which updates daily during the season.

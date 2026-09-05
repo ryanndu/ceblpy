@@ -1,28 +1,40 @@
-[tool.poetry]
+[project]
 name = "ceblpy"
-version = "0.1.1"
-description = "Extract and analyze data from the Canadian Elite Basketball league (CEBL)."
-authors = ["Ryan Du"]
+version = "1.0.0rc1"
+description = "Load Canadian Elite Basketball League schedules, box scores, and play-by-play as pandas DataFrames."
+authors = [
+    { name = "Ryan Du" },
+    { name = "David Awosoga" },
+]
 license = "MIT"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-pandas = "^2.3.0"
-
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.4.1"
-pytest-cov = "^6.2.1"
-jupyter = "^1.1.1"
-myst-nb = "^1.2.0"
-sphinx-autoapi = "^3.6.0"
-sphinx-rtd-theme = "^3.0.2"
-furo = "^2024.8.6"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.3.0",
+    "pyarrow>=16.0.0",
+    "requests>=2.32.2",
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[project.urls]
-"Documentation" = "https://ceblpy.readthedocs.io/en/latest/index.html"
+[tool.hatch.build.targets.wheel]
+packages = ["src/ceblpy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "ruff>=0.16.5",
+]
+docs = [
+    "markdown-exec[ansi]>=1.12.3",
+    "matplotlib>=3.11.1",
+    "mkdocstrings-python>=2.0.8",
+    "mplbasketball>=1.0.1",
+    "tabulate>=0.10.0",
+    "zensical>=0.0.58",
+]
