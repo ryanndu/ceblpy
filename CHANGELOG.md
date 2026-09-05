@@ -2,7 +2,7 @@
 
 All notable changes to `ceblpy` are documented here.
 
-## v1.0.0
+## v1.0.0 (2026-09-04)
 
 ### Changes
 
@@ -19,11 +19,11 @@ All notable changes to `ceblpy` are documented here.
   Zensical.
 - The project now uses uv and `pyproject.toml` for dependency management.
 
-## v0.1.1
+## v0.1.1 (2025-07-29)
 
 - Fixed typo in project description
 - Added link to hosted documentation
 
-## v0.1.0
+## v0.1.0 (2025-07-02)
 
 - First release of `ceblpy`!
