@@ -94,7 +94,7 @@ import ceblpy
 
 pbp = ceblpy.load_cebl_pbp(2025)
 shots = pbp[
-    pbp["fiba_game_id"] == "2702972") & (pbp["action_type"].isin(["2pt", "3pt"]))
+    (pbp["fiba_game_id"] == "2702972") & (pbp["action_type"].isin(["2pt", "3pt"]))
 ]
 
 print(
